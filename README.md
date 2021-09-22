@@ -39,7 +39,9 @@ To build and deploy your application for the first time, run the following in yo
 
 ```bash
 sam build
-sam deploy --guided
+sam package --output-template-file packaged.yaml --s3-bucket farinaz-trying-sam --region eu-west-1
+sam deploy --template-file C:\polaris\aws\devops-pro\sam-try\sam-app\packaged.yaml --stack-name farinaz-trying-sam --capabilities CAPABILITY_IAM
+
 ```
 
 The first command will build the source of your application. The second command will package and deploy your application to AWS, with a series of prompts:
